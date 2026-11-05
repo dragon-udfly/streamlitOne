@@ -1,10 +1,9 @@
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
 from pathlib import Path
 
 # --- Page config ---
-st.set_page_config(page_title="Student Performance Dashboard", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Student Performance Dashboard", page_icon="", layout="wide")
 
 # --- Load data ---
 base_dir = Path(__file__).resolve().parent
@@ -63,13 +62,10 @@ with right_col:
     subject_counts = df["subject"].value_counts()
     st.bar_chart(subject_counts)
 
-# --- Pie chart using matplotlib ---
+# --- Pie chart using Streamlit built-in chart ---
 st.subheader("Subject Share")
-fig, ax = plt.subplots(figsize=(6, 5))
 subject_pie = df["subject"].value_counts()
-ax.pie(subject_pie.values, labels=subject_pie.index, autopct="%1.1f%%", startangle=90)
-ax.axis("equal")
-st.pyplot(fig)
+st.pie_chart(subject_pie)
 
 # --- Student score table ---
 st.subheader("Student Data")
