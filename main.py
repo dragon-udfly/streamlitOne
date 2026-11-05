@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import altair as alt
 from pathlib import Path
 
 # --- Page config ---
@@ -62,10 +63,23 @@ with right_col:
     subject_counts = df["subject"].value_counts()
     st.bar_chart(subject_counts)
 
-# --- Pie chart using Streamlit built-in chart ---
+# --- Pie chart using Altair ---
 st.subheader("Subject Share")
-subject_pie = df["subject"].value_counts()
-st.pie_chart(subject_pie)
+subject_pie = df["subject"].value_counts().reset_index()
+subject_pie.columns = ["subject", "count"]
+
+pie_chart = (
+    alt.Chart(subject_pie)
+    .mark_arc(innerRadius=40)
+    .encode(
+        theta="count:Q",
+        color="subject:N",
+        tooltip=["subject:N", "count:Q"],
+    )
+    .properties(width=420, height=300)
+)
+
+st.altair_chart(pie_chart, use_container_width=True)
 
 # --- Student score table ---
 st.subheader("Student Data")
