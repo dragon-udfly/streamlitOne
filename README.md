@@ -102,3 +102,10 @@ The application reads data from `data/sample_data.csv`. You can replace this fil
 ## License
 
 This project is licensed under the terms included in the `LICENSE` file.
+
+<img width="1897" height="915" alt="Screenshot 2026-11-08 230758" src="https://github.com/user-attachments/assets/436107b6-fcd1-4822-8cf6-de6e06677955" />
+
+<img width="1896" height="910" alt="Screenshot 2026-11-08 230744" src="https://github.com/user-attachments/assets/5fbd7fbc-3e49-461a-af4e-956db9c52ff0" />
+
+<img width="1911" height="913" alt="Screenshot 2026-11-08 230732" src="https://github.com/user-attachments/assets/6f641b5c-c10d-4fd7-912f-ad9e6199ffda" />
+
