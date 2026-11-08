@@ -58,7 +58,7 @@ On macOS/Linux:
 source .venv/bin/activate
 ```
 
-3. Install the required dependencies:
+1. Install the required dependencies:
 
 ```bash
 pip install streamlit pandas altair
